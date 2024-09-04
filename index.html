@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFinder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor"></path>
+            </svg>
+            <h1>PetFinder</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="user-actions">
+            <button class="icon-button"><i class="fas fa-map-marker-alt"></i></button>
+            <button class="icon-button"><i class="fas fa-heart"></i></button>
+            <button class="icon-button"><i class="fas fa-user"></i></button>
+            <div class="user-avatar"></div>
+        </div>
+    </header>
+    <main>
+        <h2>Find your new best friend</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-type="all"><i class="fas fa-paw"></i> All</button>
+            <button class="filter-btn" data-type="dog"><i class="fas fa-dog"></i> Dogs</button>
+            <button class="filter-btn" data-type="cat"><i class="fas fa-cat"></i> Cats</button>
+            <button class="filter-btn" data-type="other"><i class="fas fa-ellipsis-h"></i> Other</button>
+        </div>
+        <button id="add-pet-btn" class="add-pet-btn">Add Pet for Adoption</button>
+        <div id="pet-list">
+            <!-- Pet cards will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <!-- Modal for pet details -->
+    <div id="pet-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-pet-name"></h2>
+            <img id="modal-pet-image" src="" alt="Pet Image">
+            <p id="modal-pet-age"></p>
+            <p id="modal-pet-type"></p>
+            <p id="modal-pet-description"></p>
+        </div>
+    </div>
+
+    <!-- Form for adding new pets -->
+    <div id="add-pet-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add a Pet for Adoption</h2>
+            <form id="add-pet-form">
+                <input type="text" id="pet-name" placeholder="Pet Name" required>
+                <input type="number" id="pet-age" placeholder="Age in years" required>
+                <select id="pet-type" required>
+                    <option value="">Select pet type</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="other">Other</option>
+                </select>
+                <input type="url" id="pet-image" placeholder="Image URL" required>
+                <textarea id="pet-description" placeholder="Pet Description" required></textarea>
+                <button type="submit">Add Pet</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
